@@ -1,0 +1,12 @@
+---
+description: Project conventions for vector-floorplan-ai
+alwaysApply: true
+---
+
+# vector-floorplan-ai conventions
+
+- Read `AGENTS.md` at the start of substantial tasks; **do not edit it unless the user asks**.
+- Code lives in `src/vector_floorplan_ai/`; tests in `tests/` (concise unit tests).
+- Output target is **IFC**, not raster images or vendor-locked formats.
+- Run `make lint` and `make test` before finishing Python changes.
+- Minimize scope; match existing patterns; no commits unless requested.
