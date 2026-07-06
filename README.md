@@ -39,4 +39,36 @@ This project adopts an "AI-first, BIM-compliant" approach:
 ## 🤝 Contribution
 This project is currently in the research and development phase. Contributions and discussions regarding Generative AI, BIM standards, and architectural automation are highly encouraged. Please feel free to open an issue to start a discussion.
 
+## 🧰 Development setup
+
+```bash
+# Option A: conda (recommended)
+conda env create -f environment.yml
+conda activate vector-floorplan-ai
+
+# Option B: venv + pip
+python -m venv .venv && source .venv/bin/activate
+pip install -e ".[dev]"
+pre-commit install
+
+# Common tasks
+make test    # run unit tests
+make lint    # ruff check + format check
+```
+
+### Logging
+
+Every script should call `setup_logging()` once at startup. Logs go to stderr and `logs/vector-floorplan-ai.log` (rotating, 10 MB / 7 days).
+
+```python
+from vector_floorplan_ai.logging import logger, setup_logging
+
+setup_logging()
+logger.info("Pipeline started")
+```
+
+Configure via `.env` or environment variables: `LOG_LEVEL` (TRACE–CRITICAL), `LOG_DIR`, `LOG_FILE`, `LOG_TO_CONSOLE`, `LOG_TO_FILE`.
+
+See `AGENTS.md` for project state, architecture notes, and agent-oriented context.
+
 ## 📄 License

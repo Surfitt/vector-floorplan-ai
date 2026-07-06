@@ -1,0 +1,4 @@
+# Runtime dependencies — add IFC / ML packages here as modules land.
+# Install dev tooling via: pip install -e ".[dev]"
+
+loguru>=0.7
